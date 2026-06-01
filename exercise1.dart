@@ -29,45 +29,12 @@ class homeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              padding: EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Icon(Icons.travel_explore, color: Colors.white),
-                  ),
-                  Text(
-                    "Travelling",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
-                ],
-              ),
-            ),
+            HobbyCard(title: "Travelling", icon: Icons.travel_explore),
             SizedBox(height: 10),
-
-            Container(
-              padding: EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Icon(Icons.skateboarding, color: Colors.white),
-                  ),
-                  Text(
-                    "Skating",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
-                ],
-              ),
+            HobbyCard(
+              title: "Skating",
+              icon: Icons.skateboarding,
+              color: Colors.blueGrey,
             ),
           ],
         ),
@@ -90,22 +57,20 @@ class HobbyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(40),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          children: [
-            HobbyCard(title: "Food", icon: Icons.food_bank),
-            SizedBox(height: 10),
-            HobbyCard(title: "Soccer", icon: Icons.sports_soccer),
-            SizedBox(height: 10),
-            HobbyCard(title: "Reading", icon: Icons.book),
-          ],
-        ),
+    return Container(
+      padding: EdgeInsets.all(30),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Icon(icon, color: Colors.white),
+          ),
+          Text(title, style: TextStyle(color: Colors.white, fontSize: 25)),
+        ],
       ),
     );
   }
